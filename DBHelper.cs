@@ -8,8 +8,7 @@ namespace Tools
         private static string conStr = @"Data Source=175.178.160.50;
         database=supermarket;
         uid=sa;
-      
-         pwd=18365432303Liu.";
+        pwd=18365432303Liu.";
 
         //查询函数 第一个参数sql语句，
         public static DataSet Select(string sql) 
