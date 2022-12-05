@@ -91,14 +91,33 @@ namespace supermarket
             this.dataGridView1.RowsDefaultCellStyle = headerStyle;
 
 
-        }
+        } 
+        commodit c = new commodit();
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "update")
             {
                 //MessageBox.Show("行: " + e.RowIndex.ToString() + ", 列: " + e.ColumnIndex.ToString() + "; 被点击了");
                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+               string  name = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+               decimal price = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value);
+               DateTime time = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+               
+               int number = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value);
+               string type = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
                 //string id = dataGridView1.Rows[0].Cells[0].ToString();
+               
+                c.id = id;
+                c.name = name;
+                c.price = price;
+                c.time = time;
+                c.number = number;
+                c.type = type;
+
+                update update = new update();
+                update.Co(c);
+                this.Hide();
+                update.Show();
                 
             }
         }

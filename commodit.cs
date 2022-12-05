@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace supermarket
 {
-    class commodit
+    public class  commodit
     {
         public int id { get; set; }
         public string name { get; set; }
